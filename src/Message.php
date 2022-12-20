@@ -1057,7 +1057,7 @@ class Message {
         $event = $this->getEvent("flag", "deleted");
         $event::dispatch($this, $flag);
 
-        return (bool)$status;
+        return (bool) $status;
     }
 
     /**
@@ -1071,7 +1071,7 @@ class Message {
      * @throws Exceptions\RuntimeException
      */
     public function addFlag($flag): bool {
-        return $this->setFlag($flag);
+        return (bool) $this->setFlag($flag);
     }
 
     /**
@@ -1085,7 +1085,7 @@ class Message {
      * @throws Exceptions\RuntimeException
      */
     public function removeFlag($flag): bool {
-        return $this->unsetFlag($flag);
+        return (bool) $this->unsetFlag($flag);
     }
 
     /**
@@ -1156,7 +1156,7 @@ class Message {
      * @return integer
      */
     public function getFetchOptions() {
-        return $this->fetch_options;
+        return (int) $this->fetch_options;
     }
 
     /**
@@ -1165,7 +1165,7 @@ class Message {
      * @return boolean
      */
     public function getFetchBodyOption() {
-        return $this->fetch_body;
+        return (bool) $this->fetch_body;
     }
 
     /**
@@ -1174,7 +1174,7 @@ class Message {
      * @return boolean
      */
     public function getFetchFlagsOption() {
-        return $this->fetch_flags;
+        return (bool) $this->fetch_flags;
     }
 
     /**
@@ -1183,7 +1183,7 @@ class Message {
      * @return array
      */
     public function getBodies(): array {
-        return $this->bodies;
+        return (array) $this->bodies;
     }
 
     /**
@@ -1259,7 +1259,7 @@ class Message {
      * @return string
      */
     public function getMask(): string {
-        return $this->mask;
+        return (string) $this->mask;
     }
 
     /**
@@ -1284,7 +1284,7 @@ class Message {
      * @return string
      */
     public function getFolderPath(): string {
-        return $this->folder_path;
+        return (string) $this->folder_path;
     }
 
     /**
@@ -1401,7 +1401,7 @@ class Message {
      * @return int
      */
     public function getSequence(): int {
-        return $this->sequence;
+        return (int) $this->sequence;
     }
 
     /**
@@ -1410,7 +1410,7 @@ class Message {
      * @return int
      */
     public function getSequenceId(): int {
-        return $this->sequence === IMAP::ST_UID ? $this->uid : $this->msgn;
+        return (int) $this->sequence === IMAP::ST_UID ? $this->uid : $this->msgn;
     }
 
     /**
